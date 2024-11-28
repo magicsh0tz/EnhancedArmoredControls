@@ -5,7 +5,7 @@ This mod must be installed on the server and is optional for clients. Clients th
 
 It is recommended to run [CBA_A3](https://steamcommunity.com/workshop/filedetails/?id=450814997) to optimize the performance of Per Frame Handlers (PFHs).
 
-Submit issues and feature requests [here](https://github.com/magicsh0tz/Solo_Crew/issues).
+Submit issues and feature requests [here](https://github.com/magicsh0tz/EnhancedArmorControls/issues).
 
 ## Usage
 1. Enter a Tank/APC as the gunner or commander.
