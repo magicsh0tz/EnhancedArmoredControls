@@ -1,11 +1,11 @@
-# Enhanced Armor Controls
-Enhanced Armor Controls allows you to operate armored vehicles as a one-man crew, without a dedicated driver.
+# Enhanced Armored Controls
+Enhanced Armored Controls allows you to operate armored vehicles as a one-man crew, without a dedicated driver.
 
 This mod must be installed on the server and is optional for clients. Clients that do not have the mod installed will not be able to use the mod features.
 
 It is recommended to run [CBA_A3](https://steamcommunity.com/workshop/filedetails/?id=450814997) to optimize the performance of Per Frame Handlers (PFHs).
 
-Submit issues and feature requests [here](https://github.com/magicsh0tz/EnhancedArmorControls/issues).
+Submit issues and feature requests [here](https://github.com/magicsh0tz/EnhancedArmoredControls/issues).
 
 ## Usage
 1. Enter a Tank/APC as the gunner or commander.
