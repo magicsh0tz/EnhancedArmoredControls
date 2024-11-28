@@ -1,5 +1,5 @@
-# Solo_Crew
-Solo_Crew allows you to operate armored vehicles as a one-man crew, without a dedicated driver.
+# Enhance Armor Controls
+Enhanced Armor Controls allows you to operate armored vehicles as a one-man crew, without a dedicated driver.
 
 This mod must be installed on the server and is optional for clients. Clients that do not have the mod installed will not be able to "Take controls".
 
@@ -19,7 +19,7 @@ class CfgRemoteExec
     class Functions
     {
         ...
-        class mgc_solo_crew_fnc_takeControls { allowedTargets = 2; jip = 0; };
+        class mgc_eac_fnc_takeControls { allowedTargets = 2; jip = 0; };
     };
 };
 ```

@@ -6,7 +6,7 @@
  * None
  *
  * Example:
- * [] call mgc_solo_crew_fnc_addActions
+ * [] call mgc_eac_fnc_addActions
  */
 
 #include "script_component.hpp"

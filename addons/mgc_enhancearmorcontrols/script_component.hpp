@@ -1,4 +1,4 @@
-#define NAME mgc_solo_crew
+#define NAME mgc_eac
 
 #define QUOTE(var1) #var1
 #define FUNC(var1) ##NAME##_fnc_##var1

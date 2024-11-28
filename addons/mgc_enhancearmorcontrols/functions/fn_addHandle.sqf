@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [_controller,_vehicle,_dummyDriver] call mgc_solo_crew_fnc_addHandle
+ * [_controller,_vehicle,_dummyDriver] call mgc_eac_fnc_addHandle
  */
 
 #include "script_component.hpp"

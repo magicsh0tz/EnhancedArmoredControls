@@ -9,7 +9,7 @@
  * Can release controls <BOOL>
  *
  * Example:
- * [_unit] call mgc_solo_crew_fnc_canReleaseControls
+ * [_unit] call mgc_eac_fnc_canReleaseControls
  */
 
 #include "script_component.hpp"

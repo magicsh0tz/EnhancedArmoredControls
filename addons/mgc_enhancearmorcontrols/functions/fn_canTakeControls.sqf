@@ -9,7 +9,7 @@
  * Can take controls <BOOL>
  *
  * Example:
- * [_unit] call mgc_solo_crew_fnc_canTakeControls
+ * [_unit] call mgc_eac_fnc_canTakeControls
  */
 
 #include "script_component.hpp"

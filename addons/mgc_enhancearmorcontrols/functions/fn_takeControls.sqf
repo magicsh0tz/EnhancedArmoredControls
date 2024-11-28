@@ -9,7 +9,7 @@
  * None
  *
  * Example:
- * [_unit] call mgc_solo_crew_fnc_takeControls
+ * [_unit] call mgc_eac_fnc_takeControls
  */
 
 #include "script_component.hpp"
