@@ -16,6 +16,8 @@
 
 #include "script_component.hpp"
 
+params ["_controller","_vehicle","_dummyDriver"];
+
 private ["_handles"];
 
 if (canSuspend) exitWith {
@@ -25,5 +27,5 @@ if (canSuspend) exitWith {
 };
 
 _handles = localNamespace getVariable [QVAR(handles),[]];
-_handles pushBack [_this,CURRENT_TIME];
+_handles pushBack [[_controller,_vehicle,_dummyDriver],CURRENT_TIME];
 localNamespace setVariable [QVAR(handles),_handles];

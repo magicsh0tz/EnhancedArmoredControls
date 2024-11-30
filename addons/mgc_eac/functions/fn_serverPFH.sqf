@@ -26,9 +26,9 @@ _currentTime = CURRENT_TIME;
 {
     _x params ["_params","_startTime"];
     
-    _params params ["_caller","_vehicle","_dummyDriver"];
+    _params params ["_controller","_vehicle","_dummyDriver"];
     
-    private ["_currentOwner","_dummyDriverOwner"];
+    private ["_controllerOwner","_dummyDriverOwner"];
     
     if (_startTime isEqualType 0) then {
         if ((driver _vehicle) == _dummyDriver) then {
@@ -70,10 +70,10 @@ _currentTime = CURRENT_TIME;
         {isNull (_vehicle getVariable [QVAR(controller),objNull])} ||
         {(_vehicle getVariable [QVAR(dummyDriver),objNull]) != _dummyDriver} ||
         {(driver _vehicle) != _dummyDriver} ||
-        {!(alive _caller)} ||
-        {!([_caller,_vehicle] call FUNC(isGunnerOrCommander))} ||
-        {_caller getVariable ["ACE_isUnconscious", false]} ||
-        {(incapacitatedState _caller) isEqualTo "UNCONSCIOUS"}
+        {!(alive _controller)} ||
+        {!([_controller,_vehicle] call FUNC(isGunnerOrCommander))} ||
+        {_controller getVariable ["ACE_isUnconscious", false]} ||
+        {(incapacitatedState _controller) isEqualTo "UNCONSCIOUS"}
     ) then {
         // Mark handle as `objNull` for cleanup.
         _handles set [_forEachIndex,objNull];
@@ -94,14 +94,14 @@ _currentTime = CURRENT_TIME;
         continue;
     };
     
-    _currentOwner = owner _caller;
+    _controllerOwner = owner _controller;
     _dummyDriverOwner = owner _dummyDriver;
-    if (_dummyDriverOwner != _currentOwner) then {
+    if (_dummyDriverOwner != _controllerOwner) then {
         // Set owner of dummyDriver to controller.
-        _dummyDriver setOwner _currentOwner;
+        _dummyDriver setOwner _controllerOwner;
         
         #ifdef DEBUG_MODE
-            player globalChat format ["Set dummyDriver owner to %1",_currentOwner];
+            player globalChat format ["Set dummyDriver owner to %1",_controllerOwner];
         #endif
     };
 } forEach _handles;

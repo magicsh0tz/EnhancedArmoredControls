@@ -10,7 +10,7 @@
  * Unit is gunner or commander of the vehicle <BOOL>
  *
  * Example:
- * [_vehicle,_unit] call mgc_eac_fnc_isGunnerOrCommander
+ * [_unit,_vehicle] call mgc_eac_fnc_isGunnerOrCommander
  */
 
 #include "script_component.hpp"

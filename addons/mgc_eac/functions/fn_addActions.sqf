@@ -12,7 +12,7 @@
 #include "script_component.hpp"
 
 [] spawn {
-    // Fixes missing action when action is added immediately after player spawns
+    // Fix missing actions when adding immediately after player spawns
     waitUntil {sleep 1; alive player};
     
     player addAction [
