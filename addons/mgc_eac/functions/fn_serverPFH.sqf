@@ -111,7 +111,7 @@ localNamespace setVariable [QVAR(handles),_handles];
 {
     _x params ["_agent","_startTime",["_isMovingOut",false]];
     
-    if (!(isAgent (teamMember _agent))) then {
+    if (isNull _agent || {!(isAgent (teamMember _agent))}) then {
         _agentsToDelete set [_forEachIndex,objNull];
         continue;
     };
