@@ -5,3 +5,5 @@
 #define QFUNC(var1) QUOTE(FUNC(var1))
 #define VAR(var1) ##NAME##_##var1
 #define QVAR(var1) QUOTE(VAR(var1))
+
+#define ARR_2(ARG1,ARG2) ARG1, ARG2

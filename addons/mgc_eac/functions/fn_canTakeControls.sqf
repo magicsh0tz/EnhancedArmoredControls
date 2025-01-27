@@ -14,15 +14,14 @@
 
 #include "script_component.hpp"
 
-params ["_unit"];
+params ["_unit","_vehicle"];
 
-private ["_vehicle","_controller","_dummyDriver"];
+private ["_controller","_dummyDriver"];
 
 if (isNull _unit || {!(alive _unit)}) exitWith {
     false
 };
 
-_vehicle = objectParent _unit;
 if (isNull _vehicle || {!(alive _vehicle)}) exitWith {
     false
 };
@@ -30,8 +29,7 @@ if (isNull _vehicle || {!(alive _vehicle)}) exitWith {
 _controller = _vehicle getVariable [QVAR(controller),objNull];
 _dummyDriver = _vehicle getVariable [QVAR(dummyDriver),objNull];
 
-({_vehicle isKindOf _x} count ALLOWED_TYPES) > 0 &&
-{isNull (driver _vehicle)} &&
+isNull (driver _vehicle) &&
 {isNull _controller} &&
 {isNull _dummyDriver} &&
 {!(lockedDriver _vehicle)} &&

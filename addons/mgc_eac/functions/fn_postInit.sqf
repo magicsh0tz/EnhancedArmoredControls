@@ -18,9 +18,6 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
-    [] call FUNC(addActions);
-    player addEventHandler ["Respawn",{[] call FUNC(addActions);}];
-    
     if (HAS_CBA) then {
         [FUNC(clientPFH),0.1,[]] call CBA_fnc_addPerFrameHandler;
     } else {

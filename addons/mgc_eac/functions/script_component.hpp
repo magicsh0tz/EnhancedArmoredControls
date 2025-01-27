@@ -5,6 +5,5 @@
 #define HAS_CBA isClass(configFile >> "CfgPatches" >> "cba_common")
 #define HAS_ACE isClass(configFile >> "CfgPatches" >> "ace_common")
 
-#define ALLOWED_TYPES ["Tank","Wheeled_APC_F"]
 #define CURRENT_TIME diag_tickTime
-#define CONDITION_TIMEOUT 5
+#define CONDITION_TIMEOUT 3

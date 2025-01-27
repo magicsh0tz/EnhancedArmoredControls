@@ -14,12 +14,11 @@
 
 #include "script_component.hpp"
 
-params ["_caller"];
+params ["_unit","_vehicle"];
 
 private ["_vehicle","_dummyDriver"];
 
-_vehicle = objectParent _caller;
-if (isNull _vehicle) exitWith {};
+if (!([_unit,_vehicle] call FUNC(canReleaseControls))) exitWith {};
 
 _vehicle setVariable [QVAR(controller),nil,true];
 

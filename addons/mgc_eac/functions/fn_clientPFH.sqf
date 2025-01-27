@@ -19,7 +19,7 @@ params ["_args","_pfhHandle"];
 
 private ["_unit","_vehicle"];
 
-_unit = player;
+_unit = [] call FUNC(getPlayer);
 if (isNull _unit || {!(alive _unit)}) exitWith {};
 
 _vehicle = objectParent _unit;

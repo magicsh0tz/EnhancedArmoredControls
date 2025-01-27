@@ -14,19 +14,16 @@
 
 #include "script_component.hpp"
 
-params ["_caller"];
+params ["_unit","_vehicle"];
 
-private ["_vehicle","_dummyDriverClass","_dummyDriver"];
+private ["_dummyDriverClass","_dummyDriver"];
 
 if (!isServer) exitWith {
     // Run on server to prevent race condition.
     _this remoteExecCall [QFUNC(takeControls),2,false];
 };
 
-if (!([_caller] call FUNC(canTakeControls))) exitWith {};
-
-_vehicle = objectParent _caller;
-if (isNull _vehicle) exitWith {};
+if (!([_unit,_vehicle] call FUNC(canTakeControls))) exitWith {};
 
 _dummyDriverClass = (configfile >> "CfgVehicles" >> (typeOf _vehicle) >> "crew") call BIS_fnc_getCfgData;
 if (isNil "_dummyDriverClass") exitWith {};
@@ -44,7 +41,9 @@ if (HAS_ACE) then {
     [_dummyDriver,_dummyDriver] call ace_common_fnc_claim;
 };
 
-_vehicle setVariable [QVAR(controller),_caller,true];
+_vehicle setVariable [QVAR(controller),_unit,true];
 _vehicle setVariable [QVAR(dummyDriver),_dummyDriver,true];
 
-[_caller,_vehicle,_dummyDriver] call FUNC(addHandle);
+_handles = localNamespace getVariable [QVAR(handles),[]];
+_handles pushBack [[_unit,_vehicle,_dummyDriver],CURRENT_TIME];
+localNamespace setVariable [QVAR(handles),_handles];

@@ -14,15 +14,14 @@
 
 #include "script_component.hpp"
 
-params ["_unit"];
+params ["_unit","_vehicle"];
 
-private ["_vehicle","_controller"];
+private ["_controller"];
 
 if (isNull _unit || {!(alive _unit)}) exitWith {
     false
 };
 
-_vehicle = objectParent _unit;
 if (isNull _vehicle || {!(alive _vehicle)}) exitWith {
     false
 };
