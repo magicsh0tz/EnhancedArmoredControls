@@ -3,13 +3,14 @@
  * Take controls.
  *
  * Arguments:
- * 0: unit that will take controls <OBJECT>
+ * 0: Unit <OBJECT>
+ * 1: Vehicle <OBJECT>
  *
  * Return Value:
  * None
  *
  * Example:
- * [_unit] call mgc_eac_fnc_takeControls
+ * [_unit,_vehicle] call mgc_eac_fnc_takeControls
  */
 
 #include "script_component.hpp"

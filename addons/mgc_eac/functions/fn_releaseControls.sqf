@@ -3,13 +3,14 @@
  * Release controls.
  *
  * Arguments:
- * 0: unit that will release controls <OBJECT>
+ * 0: Unit <OBJECT>
+ * 1: Vehicle <OBJECT>
  *
  * Return Value:
  * None
  *
  * Example:
- * [_unit] call mgc_eac_fnc_releaseControls
+ * [_unit,_vehicle] call mgc_eac_fnc_releaseControls
  */
 
 #include "script_component.hpp"

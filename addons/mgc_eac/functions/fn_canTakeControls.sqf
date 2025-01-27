@@ -4,12 +4,13 @@
  *
  * Arguments:
  * 0: Unit <OBJECT>
+ * 1: Vehicle <OBJECT>
  *
  * Return Value:
  * Can take controls <BOOL>
  *
  * Example:
- * [_unit] call mgc_eac_fnc_canTakeControls
+ * [_unit,_vehicle] call mgc_eac_fnc_canTakeControls
  */
 
 #include "script_component.hpp"

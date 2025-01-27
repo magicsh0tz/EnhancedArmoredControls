@@ -1,13 +1,13 @@
 /*
  * Author: magicsh0tz
- * Checks if a unit is a gunner or commander of a specific vehicle.
+ * Checks if a unit is the gunner or commander of the vehicle.
  *
  * Arguments:
  * 0: Unit <OBJECT>
  * 1: Vehicle <OBJECT>
  *
  * Return Value:
- * Unit is gunner or commander of the vehicle <BOOL>
+ * Unit is the gunner or commander of the vehicle <BOOL>
  *
  * Example:
  * [_unit,_vehicle] call mgc_eac_fnc_isGunnerOrCommander

@@ -1,15 +1,15 @@
 /*
  * Author: magicsh0tz
- * TODO
+ * Get the current unit that the player controls.
  *
  * Arguments:
  * None
  *
  * Return Value:
- * TODO
+ * The unit that the player currently controls <OBJECT>
  *
  * Example:
- * TODO
+ * [] call mgc_eac_fnc_getPlayer
  */
 
 #include "script_component.hpp"
