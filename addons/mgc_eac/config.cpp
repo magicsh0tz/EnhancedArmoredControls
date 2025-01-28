@@ -1,10 +1,9 @@
 #include "script_component.hpp"
 
 #define MACRO_ADD_ACTIONS \
-    class DefaultEventhandlers; \
-    class Eventhandlers: DefaultEventhandlers { \
+    class Eventhandlers: DefaultEventHandlers { \
         class VAR(addActions) { \
-            PostInit = QUOTE(_this call FUNC(addActions)); \
+            postInit = QUOTE(_this call FUNC(addActions)); \
         }; \
     };
 
@@ -21,6 +20,7 @@ class CfgFunctions {
     #include "CfgFunctions.hpp"
 };
 
+class DefaultEventHandlers;
 class CfgVehicles {
     class Car_F;
     class Wheeled_APC_F: Car_F {
