@@ -73,7 +73,11 @@ _currentTime = CURRENT_TIME;
         {!(alive _controller)} ||
         {!([_controller,_vehicle] call FUNC(isGunnerOrCommander))} ||
         {_controller getVariable ["ACE_isUnconscious", false]} ||
-        {(incapacitatedState _controller) isEqualTo "UNCONSCIOUS"}
+        {(lifeState _controller) isEqualTo "INCAPACITATED"} ||
+        {
+            !(isPlayer _controller) &&
+            {isNull (_controller getVariable ["BIS_fnc_moduleRemoteControl_owner", objNull])}
+        }
     ) then {
         // Mark handle as `objNull` for cleanup.
         _handles set [_forEachIndex,objNull];
