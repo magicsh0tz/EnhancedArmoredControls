@@ -15,5 +15,6 @@ class NAME
         class releaseControls;
         class serverPFH;
         class takeControls;
+        class xehPreInit;
     };
 };

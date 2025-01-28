@@ -3,7 +3,7 @@
 #define MACRO_ADD_ACTIONS \
     class Eventhandlers: DefaultEventHandlers { \
         class VAR(addActions) { \
-            postInit = QUOTE(_this call FUNC(addActions)); \
+            postInit = QUOTE([(_this select 0)] call FUNC(addActions);); \
         }; \
     };
 
@@ -30,5 +30,11 @@ class CfgVehicles {
     class Tank;
     class Tank_F: Tank {
         MACRO_ADD_ACTIONS
+    };
+};
+
+class Extended_PreInit_EventHandlers {
+    class VAR(preInit) {
+        init = QUOTE([] call FUNC(xehPreInit));
     };
 };

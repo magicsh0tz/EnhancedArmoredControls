@@ -11,7 +11,21 @@
 
 #include "script_component.hpp"
 
-params ["_vehicle"];
+params ["_vehicle",["_isXeh",false]];
+
+if (!hasInterface) exitWith {};
+
+if (_vehicle getVariable [QVAR(hasActionsAdded),false]) exitWith {
+    #ifdef DEBUG_MODE
+        player globalChat "Exiting... Already has actions added";
+    #endif
+};
+
+if (!_isXeh && HAS_CBA_XEH) exitWith {
+    #ifdef DEBUG_MODE
+        player globalChat "Exiting... Run from XEH instead";
+    #endif
+};
 
 _vehicle addAction [
     "Take controls",
@@ -42,3 +56,9 @@ _vehicle addAction [
     "",
     QUOTE([ARR_2(_this,_originalTarget)] call FUNC(canReleaseControls))
 ];
+
+_vehicle setVariable [QVAR(hasActionsAdded),true];
+
+#ifdef DEBUG_MODE
+    player globalChat (format ["Actions added (_isXeh=%1)",_isXeh]);
+#endif
