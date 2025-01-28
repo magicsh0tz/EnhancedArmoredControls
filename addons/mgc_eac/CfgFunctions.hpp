@@ -5,6 +5,7 @@ class NAME
     class functions
     {
         file = QUOTE(\NAME\functions);
+        class addActions;
         class canReleaseControls;
         class canTakeControls;
         class clientPFH;
