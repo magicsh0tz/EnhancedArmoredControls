@@ -35,7 +35,7 @@ class CfgPatches {
     class NAME {
         units[]={};
         weapons[]={};
-        requiredVersion=1.1;
+        requiredVersion=0.1;
         requiredAddons[]={};
     };
 };
