@@ -17,7 +17,7 @@
 
 params ["_unit","_vehicle"];
 
-private ["_dummyDriverClass","_dummyDriver"];
+private ["_dummyDriverClass","_dummyDriver","_handles"];
 
 if (!isServer) exitWith {
     // Run on server to prevent race condition.

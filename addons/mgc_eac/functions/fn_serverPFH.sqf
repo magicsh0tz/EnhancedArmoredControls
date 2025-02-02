@@ -70,6 +70,7 @@ _currentTime = CURRENT_TIME;
         {isNull (_vehicle getVariable [QVAR(controller),objNull])} ||
         {(_vehicle getVariable [QVAR(dummyDriver),objNull]) != _dummyDriver} ||
         {(driver _vehicle) != _dummyDriver} ||
+        {isNull _controller} ||
         {!(alive _controller)} ||
         {!([_controller,_vehicle] call FUNC(isGunnerOrCommander))} ||
         {_controller getVariable ["ACE_isUnconscious", false]} ||

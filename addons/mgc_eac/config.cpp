@@ -35,6 +35,6 @@ class CfgVehicles {
 
 class Extended_PreInit_EventHandlers {
     class VAR(preInit) {
-        init = QUOTE([] call FUNC(xehPreInit));
+        init = QUOTE([] call COMPILE_SCRIPT(XEH_preInit.sqf););
     };
 };

@@ -4,7 +4,7 @@ class NAME
 {
     class functions
     {
-        file = QUOTE(\NAME\functions);
+        file = QPATH(functions);
         class addActions;
         class canReleaseControls;
         class canTakeControls;
@@ -15,6 +15,5 @@ class NAME
         class releaseControls;
         class serverPFH;
         class takeControls;
-        class xehPreInit;
     };
 };

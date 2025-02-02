@@ -2,7 +2,9 @@
  * Author: magicsh0tz
  */
 
-#include "script_component.hpp"
+#include ".\functions\script_component.hpp"
+
+if (!hasInterface) exitWith {};
 
 {
     [_x,"InitPost",{
