@@ -24,18 +24,19 @@ if (!isServer) exitWith {
     _this remoteExecCall [QFUNC(takeControls),2,false];
 };
 
+if (isRemoteExecuted && {remoteExecutedOwner != (owner _unit)}) exitWith {};
+
 if (!([_unit,_vehicle] call FUNC(canTakeControls))) exitWith {};
 
 _dummyDriverClass = (configfile >> "CfgVehicles" >> (typeOf _vehicle) >> "crew") call BIS_fnc_getCfgData;
 if (isNil "_dummyDriverClass") exitWith {};
 
 _dummyDriver = createAgent [_dummyDriverClass,[0,0,0],[],0,"CAN_COLLIDE"];
-_dummyDriver allowDamage false;
 _dummyDriver hideObjectGlobal true;
+_dummyDriver allowDamage false;
+_dummyDriver setCaptive true;
+_dummyDriver setBehaviour "COMBAT"; // Prevent driver from turning out
 _dummyDriver moveInDriver _vehicle;
-
-// Prevent driver from turning out
-_dummyDriver setBehaviour "COMBAT";
 
 if (HAS_ACE) then {
     // Remove ace interaction
