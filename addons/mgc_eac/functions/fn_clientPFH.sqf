@@ -17,7 +17,7 @@
 
 params ["_args","_pfhHandle"];
 
-private ["_unit","_vehicle"];
+private ["_unit","_vehicle","_controller","_dummyDriver"];
 
 _unit = [] call FUNC(getPlayer);
 if (isNull _unit || {!(alive _unit)}) exitWith {};
@@ -33,12 +33,30 @@ _dummyDriver = _vehicle getVariable [QVAR(dummyDriver),objNull];
 if (isNull _dummyDriver) exitWith {};
 if (!(isAgent (teamMember _dummyDriver))) exitWith {};
 
-if (local _dummyDriver && {isDamageAllowed _dummyDriver}) then {
-    _dummyDriver allowDamage false;
+if (local _dummyDriver) then {
+    if (isDamageAllowed _dummyDriver) then {
+        _dummyDriver allowDamage false;
+        
+        #ifdef DEBUG_MODE
+            player globalChat "Set dummyDriver allowDamage to false";
+        #endif
+    };
     
-    #ifdef DEBUG_MODE
-        player globalChat "Set dummyDriver allowDamage to false";
-    #endif
+    if (!(captive _dummyDriver)) then {
+        _dummyDriver setCaptive true;
+        
+        #ifdef DEBUG_MODE
+            player globalChat "Set dummyDriver captive to true";
+        #endif
+    };
+    
+    if (!((behaviour _dummyDriver) isEqualTo "COMBAT")) then {
+        _dummyDriver setBehaviour "COMBAT";
+        
+        #ifdef DEBUG_MODE
+            player globalChat "Set dummyDriver behaviour to ""COMBAT""";
+        #endif
+    };
 };
 
 if ((effectiveCommander _vehicle) != _controller) then {
